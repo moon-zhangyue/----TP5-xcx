@@ -16,19 +16,20 @@ Page({
 
   _loadData:function(){
 	    var id = 1;
-	    var data = home.getBannerData(id, (res) => {
+		// 获得bannar信息
+	    home.getBannerData(id, (res) => {
 		    this.setData({
-			  'bannerArr': res
+			   'bannerArr': res
 		    });
-		    console.log(res)
+		    // console.log(res)
 	    });
-	//   console.log(data);
-      //不操作dom,数据绑定
-      
-  },
 
-  callBcak:function(res){
-	  console.log(res);
-  }
+		home.getThemeData((data)=>{
+			console.log(data);
+			this.setData({
+				'themeArr': data
+			});
+		})
+  },
 
 })

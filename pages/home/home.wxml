@@ -1,11 +1,27 @@
 <!--pages/home/home.wxml-->
 <view>
 	<swiper indicator-dots='true' autoplay='true' class="swiper">
-		<block wx:for="{{bannerArr}}">
+		<block wx:for="{{bannerArr}}" wx:key='key'>
 			<swiper-item class="banner-item">
 				<image mode="aspectFill" class="item-image" src="{{item.img.url}}"></image>
 			</swiper-item>
 		</block>	
 	</swiper>
-	<view>TEST</view>
+
+	<view class="home-main">
+		<view class="home-main-theme">
+			<view class="home-main-header">精选主题</view>
+			<view class="theme-box">
+				<block wx:for="{{themeArr}}" wx:key='key'>
+					<view wx:if="{{index==2}}" class="theme-item big">
+						 <image src="{{item.topic_img.url}}"></image> 
+					</view>
+					<view wx:else  class="theme-item">
+						<image src="{{item.topic_img.url}}"></image>
+					</view>
+				</block>
+			</view>
+		</view>
+		<view class="home-main-products"></view>
+	</view>
 </view>
