@@ -1,4 +1,6 @@
 
+import {Base} from '../../utils/base.js';
+
 class Home{
 	constructor(){
 
