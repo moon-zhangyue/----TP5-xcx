@@ -15,9 +15,16 @@ Page({
   },
 
   _loadData:function(){
-	  var id = 1;
-	  var data = home.getBannerData(id,(res)=>{console.log(res)});
+	    var id = 1;
+	    var data = home.getBannerData(id, (res) => {
+		    this.setData({
+			  'bannerArr': res
+		    });
+		    console.log(res)
+	    });
 	//   console.log(data);
+      //不操作dom,数据绑定
+      
   },
 
   callBcak:function(res){

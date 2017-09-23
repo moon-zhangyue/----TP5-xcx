@@ -5,21 +5,21 @@ class Base{
 		this.baseRequestUrl = Config.restUrl;
 	}
 
-	request(params,){
+	request(params){
 		var url = this.baseRequestUrl + params.url;
 		if(!params.type){
 			params.type = 'GET';
 		}
 		wx.request({
-			url: '',
+			url: url,
 			method:params.type,
-			data: null,
+			// data: null,
 			header:{
 				'content-type':'application/json',
 				'token':wx.getStorageSync('token')
 			},
 			success:function(res){
-				params.sCallBack(res) && params.sCallBack(res);
+				params.sCallBack && params.sCallBack(res.data);
 				// if(params.sCallBack){
 				// 	params.sCallBack(res);
 				// }
@@ -30,3 +30,4 @@ class Base{
 		})
 	}
 }
+export {Base};
