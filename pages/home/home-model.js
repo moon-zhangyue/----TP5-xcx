@@ -14,7 +14,6 @@ class Home extends Base{
 		}
 		this.request(params);
 	}
-
 	/*首页主题*/
 	getThemeData(callback) {
 		var params = {
