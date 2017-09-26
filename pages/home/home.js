@@ -38,7 +38,6 @@ Page({
 				'productsArr': res.data
 			})
 		})
-		
   },
 
 })
