@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+	  productsArr:[]
   },
 
   onLoad:function(){
@@ -25,11 +25,22 @@ Page({
 	    });
 
 		home.getThemeData((data)=>{
-			console.log(data);
 			this.setData({
 				'themeArr': data
 			});
-		})
+		});
+
+		/*获取单品信息*/
+		console.log(home)
+		home.getProductorData((result)=>{
+			this.setData({
+				'productsArr': [
+					{ id: 1, name: "芹菜 半斤", price: "0.01", stock: 998 },
+					{ id: 2, name: "梨花带雨 3个", price: "0.01", stock: 984}
+				]
+			});
+		});
+		
   },
 
 })
